@@ -14,7 +14,9 @@ import java.util.List;
  * modelo de documentacao a ser adotado em um projeto.
  * */
 
-public class Documento{
+public class Documento extends ParteDocumento{
+	
+	public Long codigoUnico;
 	
 	private List<ParteDocumento> partesDocumento;
 	
@@ -22,13 +24,16 @@ public class Documento{
 	 *  introducao correspondentes mas caso o 
 	 *  documento ja foi criado basta passar a 
 	 *  lista das partes do documento.*/
-	public Documento( Cabecalho cabecalho, Introducao introducao, List<ParteDocumento> partesDocumento ){		
-		if( partesDocumento == null ){
-			partesDocumento = new ArrayList<ParteDocumento>();
-			partesDocumento.add(cabecalho);
-			partesDocumento.add(introducao);
-			this.partesDocumento = partesDocumento;
-		}
+	public Documento( Cabecalho cabecalho, Introducao introducao, List<UltimaAlteracao> historicoAlteracao, UltimaAlteracao ultimaAlteracao){
+		super( null, historicoAlteracao, ultimaAlteracao);
+		this.partesDocumento = new ArrayList<ParteDocumento>();
+		this.partesDocumento.add(cabecalho);
+		this.partesDocumento.add(introducao);
+	}
+	
+	public Documento( Long codigoUnico, List<UltimaAlteracao> historicoAlteracao, List<ParteDocumento> partesDocumento ){
+		super( codigoUnico, historicoAlteracao, null);
+		this.partesDocumento = partesDocumento;
 	}
 	
 	public void  adicionaParteDocumento( ParteDocumento parteDocumento){
@@ -46,4 +51,12 @@ public class Documento{
 	public List<ParteDocumento> documento(){
 		return Collections.unmodifiableList(this.partesDocumento);
 	}
+
+	@Override
+	public String getMarkdown() {
+		StringBuilder textMarkdow = new StringBuilder();
+		this.partesDocumento.forEach( a -> textMarkdow.append(a.getMarkdown()));
+		return textMarkdow.toString();
+	}
+	
 }

@@ -17,8 +17,8 @@ public class Introducao extends ParteDocumento{
 	
 	private Campo introducao;
 	
-	public Introducao(List<UltimaAlteracao> historicoAlteracao, UltimaAlteracao ultimaAlteracao) {
-		super(historicoAlteracao, ultimaAlteracao);
+	public Introducao( Long codigoUnico, List<UltimaAlteracao> historicoAlteracao, UltimaAlteracao ultimaAlteracao) {
+		super(codigoUnico, historicoAlteracao, ultimaAlteracao);
 		this.introducao = new Campo("Introdução ", 
 				"Escreva arqui o propósito deste documento o público "
 				+ "a quem se destina e outras informações que considere essencial ao mesmo.", 

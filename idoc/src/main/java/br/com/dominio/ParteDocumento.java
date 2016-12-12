@@ -10,20 +10,27 @@ import java.util.List;
  * 
  * Parte de todo documento. 
  * Todas as caracteriscas que as partes documento 
- * de cumpri 
+ * deve atender.
  * */
 
 public abstract class ParteDocumento implements IExportMarkdown{
 	
-	protected List<UltimaAlteracao> historicoAlteracao;
+	protected Long codigoUnico;
 	
+	protected List<UltimaAlteracao> historicoAlteracao;
 	
 	/** GUARDA OS HISTORICOS DE ALTERACOES
 	 *  FEITAS NOS DOCUMENTOS EDITADOS PELO USUARIO.*/
-	public ParteDocumento( List<UltimaAlteracao> historicoAlteracao, UltimaAlteracao ultimaAlteracao ){
-		if( historicoAlteracao == null )
+	public ParteDocumento( Long codigoUnico, List<UltimaAlteracao> historicoAlteracao, UltimaAlteracao ultimaAlteracao ){
+		if( codigoUnico != null )
+			this.codigoUnico = codigoUnico;
+		else
+			this.codigoUnico = 0l;
+		if( historicoAlteracao == null ){
 			historicoAlteracao = new ArrayList<UltimaAlteracao>();
-		this.historicoAlteracao = historicoAlteracao;
-		this.historicoAlteracao.add(ultimaAlteracao);
-	}	
+			this.historicoAlteracao = historicoAlteracao;
+		}
+		if( ultimaAlteracao != null )
+			this.historicoAlteracao.add(ultimaAlteracao);
+	}
 }

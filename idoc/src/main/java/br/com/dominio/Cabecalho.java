@@ -23,8 +23,8 @@ public class Cabecalho extends ParteDocumento{
 	 *  para comecar um novo documento.
 	 * 
 	 * */
-	public Cabecalho(List<UltimaAlteracao> historicoAlteracao, UltimaAlteracao ultimaAlteracao, Usuario usuario) {
-		super(historicoAlteracao, ultimaAlteracao);
+	public Cabecalho( Long codigoUnico, List<UltimaAlteracao> historicoAlteracao, UltimaAlteracao ultimaAlteracao, Usuario usuario) {
+		super(  codigoUnico , historicoAlteracao, ultimaAlteracao);
 		this.cabecalho = new Campo("Cabeçalho ", "" , TipoCampo.caixaTextoSimples);
 		this.editarCabecalho(usuario);
 	}

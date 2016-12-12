@@ -15,8 +15,8 @@ public class Corpo extends ParteDocumento{
 	
 	private List<Campo> camposCorpo;
 
-	public Corpo(List<UltimaAlteracao> historicoAlteracao, UltimaAlteracao ultimaAlteracao, List<Campo> camposCorpo) {
-		super(historicoAlteracao, ultimaAlteracao);
+	public Corpo(Long codigoUnico, List<UltimaAlteracao> historicoAlteracao, UltimaAlteracao ultimaAlteracao, List<Campo> camposCorpo) {
+		super(  codigoUnico, historicoAlteracao, ultimaAlteracao);
 		if( camposCorpo == null )
 			camposCorpo = new ArrayList<Campo>();
 		this.camposCorpo = camposCorpo;
