@@ -10,10 +10,10 @@ Para o projeto ser desenvolvido, os seguintes participantes estão envolvidos na
 
 Nome             |            Responsável           |  Competências
 -----------------------------|----------------------------|---------
-Gabriel Barbosa   | _Projeto_     |  Aluno do 5* Periodo de Eng. de Software|
-João Henrique  | _Codificação_    | Aluno do 5* Periodo de Eng. de Software|
-Lucas Vinicios   | _Testes_          | Aluno do 5* Periodo de Eng. de Software|
-Pedro Victor     | _Análise_   | Aluno do 5* Periodo de Eng. de Software|
+Gabriel Barbosa   | _Projeto_     |  Aluno do 6* Periodo de Eng. de Software|
+João Henrique  | _Codificação_    | Aluno do 6* Periodo de Eng. de Software|
+Lucas Vinicios   | _Testes_          | Aluno do 6* Periodo de Eng. de Software|
+Pedro Victor     | _Análise_   | Aluno do 6* Periodo de Eng. de Software|
 ---------
 _Lembrando que todos trabalham nas demais áreas além daquela em que é responsável._
 
