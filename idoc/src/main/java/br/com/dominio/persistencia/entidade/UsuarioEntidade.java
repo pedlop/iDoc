@@ -8,14 +8,18 @@ package br.com.dominio.persistencia.entidade;
  * */
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+
+import br.com.dominio.Usuario;
 
 @Entity
 @Table
@@ -31,26 +35,30 @@ public class UsuarioEntidade implements Serializable{
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id_usuario")
 	private Long codigoUnico;
 	
-	@Column( columnDefinition = "text")
-	private String UsuarioJson;
-
-	public Long getCodigoUnico() {
-		return codigoUnico;
+	@Column
+	private String nome;
+	
+	@Column
+	private String senha;
+	
+	@OneToMany
+	private List<UltimaAlteracaoEntidade> ultimaAlteracao;
+	
+	public UsuarioEntidade(){
+		
 	}
-
-	public void setCodigoUnico(Long codigoUnico) {
-		this.codigoUnico = codigoUnico;
+	
+	public UsuarioEntidade( Usuario usuario ){
+		this.setUsuario(usuario);
 	}
-
-	public String getUsuarioJson() {
-		return UsuarioJson;
+	
+	public void setUsuario( Usuario usuario ){
+		this.nome  = usuario.getNome();
+		this.senha = usuario.getSenha(); 
+	} 
+	
+	public Usuario getUsuario(){
+		return new Usuario( this.nome, this.senha );
 	}
-
-	public void setUsuarioJson(String usuarioJson) {
-		UsuarioJson = usuarioJson;
-	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
+	
 }

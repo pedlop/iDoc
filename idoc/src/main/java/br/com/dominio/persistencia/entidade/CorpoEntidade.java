@@ -8,14 +8,20 @@ package br.com.dominio.persistencia.entidade;
  * */
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
-import javax.persistence.Column;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+
+import br.com.dominio.Corpo;
 
 @Entity
 @Table
@@ -31,26 +37,23 @@ public class CorpoEntidade implements Serializable{
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id_corpo")
 	private Long codigoUnico;
 	
-	@Column( columnDefinition = "text")
-	private String CorpoJson;
-
-	public Long getCodigoUnico() {
-		return codigoUnico;
+	@OneToMany( cascade = CascadeType.ALL )
+	private List<CampoEntidade> listaCampo;
+	
+	@OneToMany
+	private List<UltimaAlteracaoEntidade> ultimaAlteracaoEntidades;
+	
+	@ManyToOne
+	private DocumentoEntidade documentoEntidade;
+	
+	public void setCorpo( Corpo corpo  ){
+		this.listaCampo = new ArrayList<CampoEntidade>();
+		corpo.camposCorpo().forEach( a -> this.listaCampo.add(new CampoEntidade(a)));
 	}
-
-	public void setCodigoUnico(Long codigoUnico) {
-		this.codigoUnico = codigoUnico;
-	}
-
-	public String getCorpoJson() {
-		return CorpoJson;
-	}
-
-	public void setCorpoJson(String corpoJson) {
-		CorpoJson = corpoJson;
-	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
+	
+	public void setAlteracao( UltimaAlteracaoEntidade ultimaAlteracaoEntidade ){
+		if( this.ultimaAlteracaoEntidades == null )
+			this.ultimaAlteracaoEntidades = new ArrayList<UltimaAlteracaoEntidade>();
+		this.ultimaAlteracaoEntidades.add(ultimaAlteracaoEntidade);
 	}
 }

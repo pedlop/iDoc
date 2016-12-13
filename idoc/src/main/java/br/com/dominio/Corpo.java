@@ -26,6 +26,14 @@ public class Corpo extends ParteDocumento{
 		return this.camposCorpo;
 	}
 	
+	public void setCodigoUnico( Long codigoUnico ){
+		this.codigoUnico = codigoUnico;
+	}
+	
+	public Long getCodigoUnico(){
+		return this.codigoUnico;
+	}
+	
 	@Override
 	public String getMarkdown() {
 		StringBuilder textoMarkdown = new StringBuilder();

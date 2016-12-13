@@ -18,6 +18,8 @@ public class Projeto {
 	
 	private Long codigoUnico;
 	
+	private String nomeProjeto;
+	
 	private List<UltimaAlteracao> historicoAlteracao;
 	
 	private ModeloDocumentacao modelo;
@@ -27,8 +29,9 @@ public class Projeto {
 	 * se esta alterando modelo de documentacao 
 	 * de um projeto.
 	 * */
-	public Projeto( Long codigoUnico, ModeloDocumentacao modelo, List<UltimaAlteracao> historicoAlteracao, UltimaAlteracao ultimaAlteracao){
+	public Projeto( Long codigoUnico, String nomeProjeto,  ModeloDocumentacao modelo, List<UltimaAlteracao> historicoAlteracao, UltimaAlteracao ultimaAlteracao){
 		this.codigoUnico = codigoUnico;
+		this.nomeProjeto = nomeProjeto;
 		this.modelo		 = modelo; 
 		this.historicoAlteracao = historicoAlteracao;
 		this.historicoAlteracao.add(ultimaAlteracao);
@@ -39,8 +42,9 @@ public class Projeto {
 	 * se esta consultado projeto da 
 	 * base dados.
 	 * */
-	public Projeto( Long codigoUnico, ModeloDocumentacao modelo, List<UltimaAlteracao> historicoAlteracao){
+	public Projeto( Long codigoUnico, String nomeProjeto,  ModeloDocumentacao modelo, List<UltimaAlteracao> historicoAlteracao){
 		this.codigoUnico = codigoUnico;
+		this.nomeProjeto = nomeProjeto;
 		this.modelo		 = modelo;
 		this.historicoAlteracao = historicoAlteracao;
 	}
@@ -49,18 +53,42 @@ public class Projeto {
 	 * Construtor a ser usado quando se esta criando 
 	 * um projeto pela primeira vez.
 	 * */
-	public Projeto( ModeloDocumentacao modelo, UltimaAlteracao ultimaAlteracao ){
-		this.codigoUnico = 0L;
+	public Projeto(Long codigoUnico,  String nomeProjeto,  ModeloDocumentacao modelo, UltimaAlteracao ultimaAlteracao ){
+		this.codigoUnico = codigoUnico;
+		this.nomeProjeto = nomeProjeto;
 		this.historicoAlteracao = new ArrayList<UltimaAlteracao>();
 		this.historicoAlteracao.add(ultimaAlteracao);
 	}
-	
-	public Long getCodigoUnico(){
-		return this.codigoUnico;
-	}
-	
-	public ModeloDocumentacao getModeloDocumentacao(){
-		return this.modelo;
+
+	public Long getCodigoUnico() {
+		return codigoUnico;
 	}
 
+	public void setCodigoUnico(Long codigoUnico) {
+		this.codigoUnico = codigoUnico;
+	}
+
+	public String getNomeProjeto() {
+		return nomeProjeto;
+	}
+
+	public void setNomeProjeto(String nomeProjeto) {
+		this.nomeProjeto = nomeProjeto;
+	}
+
+	public List<UltimaAlteracao> getHistoricoAlteracao() {
+		return historicoAlteracao;
+	}
+
+	public void setHistoricoAlteracao(List<UltimaAlteracao> historicoAlteracao) {
+		this.historicoAlteracao = historicoAlteracao;
+	}
+
+	public ModeloDocumentacao getModelo() {
+		return modelo;
+	}
+
+	public void setModelo(ModeloDocumentacao modelo) {
+		this.modelo = modelo;
+	}
 }
