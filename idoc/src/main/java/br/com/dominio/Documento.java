@@ -24,8 +24,9 @@ public class Documento extends ParteDocumento{
 	 *  introducao correspondentes mas caso o 
 	 *  documento ja foi criado basta passar a 
 	 *  lista das partes do documento.*/
-	public Documento( Cabecalho cabecalho, Introducao introducao, List<UltimaAlteracao> historicoAlteracao, UltimaAlteracao ultimaAlteracao){
-		super( null, historicoAlteracao, ultimaAlteracao);
+	
+	public Documento( Long codigoUnico,  Cabecalho cabecalho, Introducao introducao, List<UltimaAlteracao> historicoAlteracao, UltimaAlteracao ultimaAlteracao){
+		super( codigoUnico, historicoAlteracao, ultimaAlteracao);
 		this.partesDocumento = new ArrayList<ParteDocumento>();
 		this.partesDocumento.add(cabecalho);
 		this.partesDocumento.add(introducao);
