@@ -73,7 +73,11 @@ nav.navbar.navbar-default{
 }
 
 .botao{
-    width: 115px;
+    width: 700px;
+    height: 150px;
+    font-size: 50px;
+    border-radius: 20px;
+
 }
 
 .nomeProduto{
@@ -93,8 +97,8 @@ nav.navbar.navbar-default{
   text-align: center;
 }
 
-.botaoinfo{
-    width: 465px;
+.botaoprojeto{
+    width: 180px;
 }
 
 .ima{
