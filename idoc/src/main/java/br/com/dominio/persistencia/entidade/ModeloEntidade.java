@@ -16,7 +16,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -43,25 +42,38 @@ public class ModeloEntidade implements Serializable{
 	@OneToMany
 	public List<UltimaAlteracaoEntidade> ultimaAlteracao;
 	
-	@OneToOne
-	private ModeloEntidade modeloEntidade;
+	@OneToMany
+	private List<ModeloDocumentoEntidade> modelo;
 	
-	public void setModelo( List<Documento> documentos, UltimaAlteracao ultimaAlteracao ){
+	public void setDocumento( List<Documento> documentos, UltimaAlteracao ultimaAlteracao ){
 		if( this.documentoEntidade == null )
 			this.documentoEntidade = new ArrayList<DocumentoEntidade>();
 		documentos.forEach( a -> {
 			DocumentoEntidade docEnt = new DocumentoEntidade();
 			docEnt.setDocumento( a.getCabecalho(), a.getIntroducao(), a.getAlteracaoes(), ultimaAlteracao);
 		});
-		if( this.ultimaAlteracao == null )
-			this.ultimaAlteracao = new ArrayList<UltimaAlteracaoEntidade>();
-		if( ultimaAlteracao != null )
-			this.ultimaAlteracao.add( new UltimaAlteracaoEntidade(ultimaAlteracao));
+		this.setAlteracoes(ultimaAlteracao);
 	}
 	
 	public List<Documento> getDocumento(){
 		List<Documento> lista = new ArrayList<Documento>();
 		this.documentoEntidade.forEach( a -> lista.add( a.getDocumento()));
 		return lista;
+	}
+	
+	public void setModelo( List<ModeloDocumentoEntidade> documentos, UltimaAlteracao ultimaAlteracao ){
+		this.modelo = documentos;		
+		this.setAlteracoes(ultimaAlteracao);
+	}
+	
+	public List<ModeloDocumentoEntidade> getModelo(){
+		return this.modelo;
+	}
+	
+	private void setAlteracoes( UltimaAlteracao ultimaAlteracao ){
+		if( this.ultimaAlteracao == null )
+			this.ultimaAlteracao = new ArrayList<UltimaAlteracaoEntidade>();
+		if( ultimaAlteracao != null )
+			this.ultimaAlteracao.add( new UltimaAlteracaoEntidade(ultimaAlteracao));
 	}
 }

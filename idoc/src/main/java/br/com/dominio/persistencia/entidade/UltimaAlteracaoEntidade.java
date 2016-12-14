@@ -47,6 +47,15 @@ public class UltimaAlteracaoEntidade {
 	@ManyToOne
 	private ProjetoEntidade projetoEntidade;
 	
+	@ManyToOne
+	private ModeloCampoEntidade modeloCampoEntidade;
+	
+	@ManyToOne
+	private ModeloCorpoEntidade modeloCorpoEntidade;
+	
+	@ManyToOne
+	private ModeloDocumentoEntidade modeloDocumentoEntidade;
+	
 	public  UltimaAlteracaoEntidade(){
 		
 	}
