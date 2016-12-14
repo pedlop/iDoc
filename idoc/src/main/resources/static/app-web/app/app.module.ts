@@ -12,6 +12,7 @@ import { RouterModule, Routes }          from '@angular/router';
 import { AppComponent }                  from './page/AppComponent/AppComponent';
 import {LoginComponent}                  from './page/LoginComponent/LoginComponent';
 import {ProjetosComponent}               from './page/ProjetosComponent/ProjetosComponent';
+import {HomeComponent}               from './page/HomeComponent/HomeComponent';
 /**-------------------- DOMINIO E COMUNICAO WebService ----------------------*/
 
 /** ------------------------ SINGLETONS --------------------------------------*/
@@ -25,10 +26,11 @@ const WINDOW_PROVIDER: ValueProvider = {
 };
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/login',pathMatch: 'full'},
+  { path: '', redirectTo: '/home',pathMatch: 'full'},
   { path: 'login', component: LoginComponent },
-  { path: 'home', component: AppComponent},
-  { path: 'projetos', component: ProjetosComponent}
+  { path: 'app', component: AppComponent},
+  { path: 'projetos', component: ProjetosComponent},
+  { path: 'home', component: HomeComponent}
 ];
 
 @NgModule({
@@ -38,7 +40,8 @@ const appRoutes: Routes = [
                   FormsModule ],
   declarations: [ AppComponent,
                   LoginComponent,
-                  ProjetosComponent
+                  ProjetosComponent,
+                  HomeComponent
                   ],
   providers:    [ WINDOW_PROVIDER],
   bootstrap:    [ AppComponent ]
