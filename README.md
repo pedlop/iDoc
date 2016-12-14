@@ -21,9 +21,12 @@ _Lembrando que todos trabalham nas demais áreas além daquela em que é respons
 
 Para o desenvolvimento do projeto serão utilizadas ferramentas para auxiliar na Gerência do Projeto e na construção do software. As ferramentas utilizadas são:
 
-- [Trello](https://trello.com) - _Controle de atividades (Pendentes, em execução e realizadas)_ 
-- [Github](https://github.com) - _Controle de versão do código fonte do projeto_
-- [Hangouts](https://hangouts.google.com) - _Comunicação e reuniões online da equipe_
+- [Trello](https://trello.com) - _Controle de atividades (Pendentes, em execução e realizadas);_ 
+- [Github](https://github.com) - _Controle de versão do código fonte do projeto;_
+- [Hangouts](https://hangouts.google.com) - _Comunicação e reuniões online da equipe;_
+- [Haroopad](http://pad.haroopress.com/) - _Editor de Texto no formato Markdown;_
+- [Eclipse](https://eclipse.org/) - _IDE_;
+- [Pinegrow](https://pinegrow.com/) - _Auxilio com as Telas em HTML._
 
 ### Tecnologias utilizadas - Implementação
 
