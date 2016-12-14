@@ -10,12 +10,25 @@
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav">
                 	<li role="presentation"><a routerLink="/catalogoProduto">Guia</a></li>
-                    <li role="presentation"><a routerLink="/projetos" routerLinkActive="active"> Meus Projetos </a></li>
-                    <li role="presentation"><a routerLink="/cabecalho" routerLinkActive="active"> Meus Cabecalhos </a></li>
+                	<div class="btn-group">
+                        <button class="btn navbar-btn navbar-right dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button">
+                            Acoes 
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li role="presentation"><a routerLink="/projetos" routerLinkActive="active"> Meus Projetos </a></li>
+		                    <li role="presentation"><a routerLink="/cabecalho" routerLinkActive="active"> Meus Cabecalhos </a></li>
+		                    <li role="presentation"><a routerLink="/introducao" routerLinkActive="active"> Minhas Introducoes </a></li>
+		                    <li role="presentation"><a routerLink="/corpo" routerLinkActive="active"> Meus Corpos </a></li>
+		                    <li role="presentation"><a routerLink="/campo" routerLinkActive="active"> Meus Campos </a></li>
+		                    <li role="presentation"><a routerLink="/documento" routerLinkActive="active"> Meus Documentos </a></li>
+		                    <li role="presentation"><a routerLink="/modelodoc" routerLinkActive="active"> Meus Modelos de Documento </a></li>
+                        </ul>
+                    </div>
                     <li role="presentation"><a>Quem Somos</a></li>
                 </ul>
                 <div>
-                    <button  routerLink="/login" class="btn btn-primary navbar-btn navbar-right" type="button" >Entrar/Cadastrar-se</button>
+                    <button  routerLink="/login" class="btn navbar-btn navbar-right" type="button" >Entrar/Cadastrar-se</button>
                 </div>
             </div>
         </div>

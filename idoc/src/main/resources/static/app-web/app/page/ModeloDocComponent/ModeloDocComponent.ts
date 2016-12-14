@@ -3,11 +3,11 @@ import {Component}      from '@angular/core';
 
 
 @Component({
-    selector:'cabecalho',
-    templateUrl: 'app/page/CabecalhoComponent/CabecalhoComponent.html',
+    selector:'modelodoc',
+    templateUrl: 'app/page/ModeloDocComponent/ModeloDocComponent.html',
     providers: []
 })
-export class CabecalhoComponent {
+export class ModeloDocComponent {
 
   constructor() {
     

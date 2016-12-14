@@ -24,6 +24,10 @@ var CampoComponent_1 = require("./page/CampoComponent/CampoComponent");
 var HomeComponent_1 = require("./page/HomeComponent/HomeComponent");
 var CadastroComponent_1 = require("./page/CadastroComponent/CadastroComponent");
 var CabecalhoComponent_1 = require("./page/CabecalhoComponent/CabecalhoComponent");
+var CorpoComponent_1 = require("./page/CorpoComponent/CorpoComponent");
+var IntroducaoComponent_1 = require("./page/IntroducaoComponent/IntroducaoComponent");
+var DocumentoComponent_1 = require("./page/DocumentoComponent/DocumentoComponent");
+var ModeloDocComponent_1 = require("./page/ModeloDocComponent/ModeloDocComponent");
 /**-------------------- DOMINIO E COMUNICAO WebService ----------------------*/
 /** ------------------------ SINGLETONS --------------------------------------*/
 var LoginLogoutSingleton_1 = require("./page/LoginLogoutSingleton/LoginLogoutSingleton");
@@ -32,15 +36,18 @@ var WINDOW_PROVIDER = {
     useValue: window
 };
 var appRoutes = [
-    { path: '', redirectTo: '/home', pathMatch: 'full' },
+    { path: '', redirectTo: '/corpo', pathMatch: 'full' },
     { path: 'login', component: LoginComponent_1.LoginComponent },
     { path: 'app', component: AppComponent_1.AppComponent },
     { path: 'projetos', component: ProjetosComponent_1.ProjetosComponent },
     { path: 'campo', component: CampoComponent_1.CampoComponent },
     { path: 'home', component: HomeComponent_1.HomeComponent },
-    { path: 'projetos', component: ProjetosComponent_1.ProjetosComponent },
     { path: 'cadastro', component: CadastroComponent_1.CadastroComponent },
-    { path: 'cabecalho', component: CabecalhoComponent_1.CabecalhoComponent }
+    { path: 'cabecalho', component: CabecalhoComponent_1.CabecalhoComponent },
+    { path: 'introducao', component: IntroducaoComponent_1.IntroducaoComponent },
+    { path: 'corpo', component: CorpoComponent_1.CorpoComponent },
+    { path: 'documento', component: CorpoComponent_1.CorpoComponent },
+    { path: 'modelodoc', component: CorpoComponent_1.CorpoComponent },
 ];
 var AppModule = (function () {
     function AppModule() {
@@ -62,7 +69,11 @@ AppModule = __decorate([
             ProjetosComponent_1.ProjetosComponent,
             HomeComponent_1.HomeComponent,
             CadastroComponent_1.CadastroComponent,
-            CabecalhoComponent_1.CabecalhoComponent
+            CabecalhoComponent_1.CabecalhoComponent,
+            CorpoComponent_1.CorpoComponent,
+            IntroducaoComponent_1.IntroducaoComponent,
+            ModeloDocComponent_1.ModeloDocComponent,
+            DocumentoComponent_1.DocumentoComponent
         ],
         providers: [WINDOW_PROVIDER],
         bootstrap: [AppComponent_1.AppComponent]
