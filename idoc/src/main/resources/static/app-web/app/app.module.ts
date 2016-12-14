@@ -17,6 +17,7 @@ import {HomeComponent}                   from './page/HomeComponent/HomeComponen
 import {CadastroComponent}               from './page/CadastroComponent/CadastroComponent';
 import {CabecalhoComponent}              from './page/CabecalhoComponent/CabecalhoComponent';
 import {CorpoComponent}                  from './page/CorpoComponent/CorpoComponent';
+import {IntroducaoComponent}             from './page/IntroducaoComponent/IntroducaoComponent';
 /**-------------------- DOMINIO E COMUNICAO WebService ----------------------*/
 
 /** ------------------------ SINGLETONS --------------------------------------*/
@@ -39,6 +40,7 @@ const appRoutes: Routes = [
   { path: 'projetos', component: ProjetosComponent},
   { path: 'cadastro', component: CadastroComponent},
   { path: 'cabecalho', component: CabecalhoComponent},
+  { path: 'introducao', component: IntroducaoComponent},
   { path: 'corpo', component: CorpoComponent}
 ];
 
@@ -55,7 +57,8 @@ const appRoutes: Routes = [
                   HomeComponent,
                   CadastroComponent,
                   CabecalhoComponent,
-                  CorpoComponent
+                  CorpoComponent,
+                  IntroducaoComponent
                   ],
   providers:    [ WINDOW_PROVIDER],
   bootstrap:    [ AppComponent ]
