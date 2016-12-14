@@ -16,6 +16,7 @@ import {CampoComponent}                  from './page/CampoComponent/CampoCompon
 import {HomeComponent}                   from './page/HomeComponent/HomeComponent';
 import {CadastroComponent}               from './page/CadastroComponent/CadastroComponent';
 import {CabecalhoComponent}               from './page/CabecalhoComponent/CabecalhoComponent';
+import {IntroducaoComponent}               from './page/IntroducaoComponent/IntroducaoComponent';
 /**-------------------- DOMINIO E COMUNICAO WebService ----------------------*/
 
 /** ------------------------ SINGLETONS --------------------------------------*/
@@ -37,7 +38,8 @@ const appRoutes: Routes = [
   { path: 'home', component: HomeComponent},
   { path: 'projetos', component: ProjetosComponent},
   { path: 'cadastro', component: CadastroComponent},
-  { path: 'cabecalho', component: CabecalhoComponent}
+  { path: 'cabecalho', component: CabecalhoComponent},
+  { path: 'introducao', component: IntroducaoComponent}
 ];
 
 @NgModule({
@@ -52,14 +54,14 @@ const appRoutes: Routes = [
                   ProjetosComponent,
                   HomeComponent,
                   CadastroComponent,
-                  CabecalhoComponent
+                  CabecalhoComponent,
+                  IntroducaoComponent
                   ],
   providers:    [ WINDOW_PROVIDER],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule {
     constructor( ){
-      
       //CRIA OS SINGLETONS PARA O TODA A APLICAO
       let loginLogout: LoginLogoutSingleton   = new LoginLogoutSingleton();
       
