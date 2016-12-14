@@ -12,7 +12,8 @@ import { RouterModule, Routes }          from '@angular/router';
 import { AppComponent }                  from './page/AppComponent/AppComponent';
 import {LoginComponent}                  from './page/LoginComponent/LoginComponent';
 import {ProjetosComponent}               from './page/ProjetosComponent/ProjetosComponent';
-import {HomeComponent}               from './page/HomeComponent/HomeComponent';
+import {HomeComponent}                   from './page/HomeComponent/HomeComponent';
+import {CadastroComponent}               from './page/CadastroComponent/CadastroComponent';
 /**-------------------- DOMINIO E COMUNICAO WebService ----------------------*/
 
 /** ------------------------ SINGLETONS --------------------------------------*/
@@ -30,7 +31,8 @@ const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'app', component: AppComponent},
   { path: 'projetos', component: ProjetosComponent},
-  { path: 'home', component: HomeComponent}
+  { path: 'home', component: HomeComponent},
+  { path: 'cadastro', component: CadastroComponent}
 ];
 
 @NgModule({
@@ -41,7 +43,8 @@ const appRoutes: Routes = [
   declarations: [ AppComponent,
                   LoginComponent,
                   ProjetosComponent,
-                  HomeComponent
+                  HomeComponent,
+                  CadastroComponent
                   ],
   providers:    [ WINDOW_PROVIDER],
   bootstrap:    [ AppComponent ]
