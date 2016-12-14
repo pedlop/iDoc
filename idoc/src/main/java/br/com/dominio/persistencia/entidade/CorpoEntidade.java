@@ -18,10 +18,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import br.com.dominio.Campo;
 import br.com.dominio.Corpo;
+import br.com.dominio.UltimaAlteracao;
 
 @Entity
 @Table
@@ -46,6 +49,9 @@ public class CorpoEntidade implements Serializable{
 	@ManyToOne
 	private DocumentoEntidade documentoEntidade;
 	
+	@OneToOne
+	private ModeloCorpoEntidade modelo;
+	
 	public void setCorpo( Corpo corpo  ){
 		this.listaCampo = new ArrayList<CampoEntidade>();
 		corpo.camposCorpo().forEach( a -> this.listaCampo.add(new CampoEntidade(a)));
@@ -55,5 +61,14 @@ public class CorpoEntidade implements Serializable{
 		if( this.ultimaAlteracaoEntidades == null )
 			this.ultimaAlteracaoEntidades = new ArrayList<UltimaAlteracaoEntidade>();
 		this.ultimaAlteracaoEntidades.add(ultimaAlteracaoEntidade);
+	}
+	
+	public Corpo getCorpo(){
+		List<UltimaAlteracao> ultimasAlteracoes = new ArrayList<UltimaAlteracao>();
+		List<Campo> listaCampo = new ArrayList<Campo>();
+		this.listaCampo.forEach( a -> listaCampo.add(a.getCampo()));
+		this.ultimaAlteracaoEntidades.forEach( a -> ultimasAlteracoes.add( a.getUltimaAlteracao()));
+		Corpo corpo = new Corpo(this.codigoUnico, ultimasAlteracoes, null, listaCampo);
+		return corpo;
 	}
 }

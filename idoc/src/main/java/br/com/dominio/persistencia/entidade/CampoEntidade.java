@@ -64,6 +64,9 @@ public class CampoEntidade implements Serializable {
 	@OneToOne
 	private CabecalhoEntidade  cabecalhoEntidade;
 	
+	@OneToOne
+	private ModeloCampoEntidade modelo;
+	
 	public CampoEntidade(){
 		
 	}
