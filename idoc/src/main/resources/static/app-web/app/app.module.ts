@@ -32,7 +32,7 @@ const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: AppComponent},
   { path: 'projetos', component: ProjetosComponent},
-  { path: 'campo', component: CampoComponent}
+  { path: 'campo', component: CampoComponent},
   { path: 'app', component: AppComponent},
   { path: 'projetos', component: ProjetosComponent},
   { path: 'cadastro', component: CadastroComponent}
@@ -46,7 +46,7 @@ const appRoutes: Routes = [
   declarations: [ AppComponent,
                   LoginComponent,
                   ProjetosComponent,
-                  CampoComponent
+                  CampoComponent,
                   ProjetosComponent,
                   HomeComponent,
                   CadastroComponent
