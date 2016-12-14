@@ -19,6 +19,11 @@ var router_1 = require("@angular/router");
 /**-------------------- PAGINAS - COMPONENT(s) ----------------------*/
 var AppComponent_1 = require("./page/AppComponent/AppComponent");
 var LoginComponent_1 = require("./page/LoginComponent/LoginComponent");
+var ProjetosComponent_1 = require("./page/ProjetosComponent/ProjetosComponent");
+var CampoComponent_1 = require("./page/CampoComponent/CampoComponent");
+var HomeComponent_1 = require("./page/HomeComponent/HomeComponent");
+var CadastroComponent_1 = require("./page/CadastroComponent/CadastroComponent");
+var CabecalhoComponent_1 = require("./page/CabecalhoComponent/CabecalhoComponent");
 /**-------------------- DOMINIO E COMUNICAO WebService ----------------------*/
 /** ------------------------ SINGLETONS --------------------------------------*/
 var LoginLogoutSingleton_1 = require("./page/LoginLogoutSingleton/LoginLogoutSingleton");
@@ -27,8 +32,15 @@ var WINDOW_PROVIDER = {
     useValue: window
 };
 var appRoutes = [
+    { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'login', component: LoginComponent_1.LoginComponent },
-    { path: 'home', component: AppComponent_1.AppComponent }
+    { path: 'app', component: AppComponent_1.AppComponent },
+    { path: 'projetos', component: ProjetosComponent_1.ProjetosComponent },
+    { path: 'campo', component: CampoComponent_1.CampoComponent },
+    { path: 'home', component: HomeComponent_1.HomeComponent },
+    { path: 'projetos', component: ProjetosComponent_1.ProjetosComponent },
+    { path: 'cadastro', component: CadastroComponent_1.CadastroComponent },
+    { path: 'cabecalho', component: CabecalhoComponent_1.CabecalhoComponent }
 ];
 var AppModule = (function () {
     function AppModule() {
@@ -44,7 +56,13 @@ AppModule = __decorate([
             router_1.RouterModule.forRoot(appRoutes),
             forms_1.FormsModule],
         declarations: [AppComponent_1.AppComponent,
-            LoginComponent_1.LoginComponent
+            LoginComponent_1.LoginComponent,
+            ProjetosComponent_1.ProjetosComponent,
+            CampoComponent_1.CampoComponent,
+            ProjetosComponent_1.ProjetosComponent,
+            HomeComponent_1.HomeComponent,
+            CadastroComponent_1.CadastroComponent,
+            CabecalhoComponent_1.CabecalhoComponent
         ],
         providers: [WINDOW_PROVIDER],
         bootstrap: [AppComponent_1.AppComponent]

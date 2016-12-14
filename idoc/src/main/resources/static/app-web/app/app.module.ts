@@ -11,7 +11,13 @@ import { RouterModule, Routes }          from '@angular/router';
 /**-------------------- PAGINAS - COMPONENT(s) ----------------------*/
 import { AppComponent }                  from './page/AppComponent/AppComponent';
 import {LoginComponent}                  from './page/LoginComponent/LoginComponent';
-
+import {ProjetosComponent}               from './page/ProjetosComponent/ProjetosComponent';
+import {CampoComponent}                  from './page/CampoComponent/CampoComponent';
+import {HomeComponent}                   from './page/HomeComponent/HomeComponent';
+import {CadastroComponent}               from './page/CadastroComponent/CadastroComponent';
+import {CabecalhoComponent}              from './page/CabecalhoComponent/CabecalhoComponent';
+import {CorpoComponent}                  from './page/CorpoComponent/CorpoComponent';
+import {IntroducaoComponent}             from './page/IntroducaoComponent/IntroducaoComponent';
 /**-------------------- DOMINIO E COMUNICAO WebService ----------------------*/
 
 /** ------------------------ SINGLETONS --------------------------------------*/
@@ -25,8 +31,17 @@ const WINDOW_PROVIDER: ValueProvider = {
 };
 
 const appRoutes: Routes = [
+  { path: '', redirectTo: '/corpo',pathMatch: 'full'},
   { path: 'login', component: LoginComponent },
-  { path: 'home', component: AppComponent}
+  { path: 'app', component: AppComponent},
+  { path: 'projetos', component: ProjetosComponent},
+  { path: 'campo', component: CampoComponent},
+  { path: 'home', component: HomeComponent},
+  { path: 'projetos', component: ProjetosComponent},
+  { path: 'cadastro', component: CadastroComponent},
+  { path: 'cabecalho', component: CabecalhoComponent},
+  { path: 'introducao', component: IntroducaoComponent},
+  { path: 'corpo', component: CorpoComponent}
 ];
 
 @NgModule({
@@ -35,7 +50,15 @@ const appRoutes: Routes = [
                   RouterModule.forRoot(appRoutes),
                   FormsModule ],
   declarations: [ AppComponent,
-                  LoginComponent
+                  LoginComponent,
+                  ProjetosComponent,
+                  CampoComponent,
+                  ProjetosComponent,
+                  HomeComponent,
+                  CadastroComponent,
+                  CabecalhoComponent,
+                  CorpoComponent,
+                  IntroducaoComponent
                   ],
   providers:    [ WINDOW_PROVIDER],
   bootstrap:    [ AppComponent ]
