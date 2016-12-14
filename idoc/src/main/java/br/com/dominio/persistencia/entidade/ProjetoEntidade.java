@@ -8,12 +8,14 @@ package br.com.dominio.persistencia.entidade;
  * */
 
 import java.io.Serializable;
+import java.util.List;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -31,26 +33,10 @@ public class ProjetoEntidade implements Serializable{
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id_projeto")
 	private Long codigoUnico;
 	
-	@Column( columnDefinition = "text")
-	private String ProjetoJson;
+	@OneToMany
+	public List<UltimaAlteracaoEntidade> ultimaAlteracao;
+	
+	@OneToOne
+	private ModeloEntidade modeloEntidade;
 
-	public Long getCodigoUnico() {
-		return codigoUnico;
-	}
-
-	public void setCodigoUnico(Long codigoUnico) {
-		this.codigoUnico = codigoUnico;
-	}
-
-	public String getProjetoJson() {
-		return ProjetoJson;
-	}
-
-	public void setProjetoJson(String projetoJson) {
-		ProjetoJson = projetoJson;
-	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
 }

@@ -29,17 +29,29 @@ public class ModeloDocumentacao {
 		if( ultimaAlteracao == null )
 			this.historicoAlteracao.add(ultimaAlteracao);	
 	}
-	
-	public void adicionarDocumentoModelo( Documento documento ){
-		this.documentacaoModelo.add(documento);
+
+	public Long getCodigoUnico() {
+		return codigoUnico;
 	}
-	
-	public void retirarDocumentoModelo( Documento documento ){
-		this.documentacaoModelo.remove(documento);
+
+	public void setCodigoUnico(Long codigoUnico) {
+		this.codigoUnico = codigoUnico;
 	}
-	
-	public void alterarDocumento( Documento documento ){
-		
+
+	public List<UltimaAlteracao> getHistoricoAlteracao() {
+		return historicoAlteracao;
+	}
+
+	public void setHistoricoAlteracao(List<UltimaAlteracao> historicoAlteracao) {
+		this.historicoAlteracao = historicoAlteracao;
+	}
+
+	public List<Documento> getDocumentacaoModelo() {
+		return documentacaoModelo;
+	}
+
+	public void setDocumentacaoModelo(List<Documento> documentacaoModelo) {
+		this.documentacaoModelo = documentacaoModelo;
 	}
 }
 

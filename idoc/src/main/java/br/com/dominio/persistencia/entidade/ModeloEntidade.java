@@ -8,14 +8,20 @@ package br.com.dominio.persistencia.entidade;
  * */
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+
+import br.com.dominio.Documento;
+import br.com.dominio.UltimaAlteracao;
 
 @Entity
 @Table
@@ -31,27 +37,31 @@ public class ModeloEntidade implements Serializable{
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id_modelo")
 	private Long codigoUnico;
 	
-	@Column( columnDefinition = "text")
-	private String ModeloJson;
-
-	public Long getCodigoUnico() {
-		return codigoUnico;
-	}
-
-	public void setCodigoUnico(Long codigoUnico) {
-		this.codigoUnico = codigoUnico;
-	}
-
-	public String getModeloJson() {
-		return ModeloJson;
-	}
-
-	public void setModeloJson(String modeloJson) {
-		ModeloJson = modeloJson;
-	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
+	@OneToMany
+	private List<DocumentoEntidade> documentoEntidade;
+	
+	@OneToMany
+	public List<UltimaAlteracaoEntidade> ultimaAlteracao;
+	
+	@OneToOne
+	private ModeloEntidade modeloEntidade;
+	
+	public void setModelo( List<Documento> documentos, UltimaAlteracao ultimaAlteracao ){
+		if( this.documentoEntidade == null )
+			this.documentoEntidade = new ArrayList<DocumentoEntidade>();
+		documentos.forEach( a -> {
+			DocumentoEntidade docEnt = new DocumentoEntidade();
+			docEnt.setDocumento( a.getCabecalho(), a.getIntroducao(), a.getAlteracaoes(), ultimaAlteracao);
+		});
+		if( this.ultimaAlteracao == null )
+			this.ultimaAlteracao = new ArrayList<UltimaAlteracaoEntidade>();
+		if( ultimaAlteracao != null )
+			this.ultimaAlteracao.add( new UltimaAlteracaoEntidade(ultimaAlteracao));
 	}
 	
+	public List<Documento> getDocumento(){
+		List<Documento> lista = new ArrayList<Documento>();
+		this.documentoEntidade.forEach( a -> lista.add( a.getDocumento()));
+		return lista;
+	}
 }

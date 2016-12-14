@@ -1,7 +1,6 @@
 package br.com.dominio;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -18,7 +17,11 @@ public class Documento extends ParteDocumento{
 	
 	public Long codigoUnico;
 	
-	private List<ParteDocumento> partesDocumento;
+	private Cabecalho cabecalho;
+	
+	private Introducao introducao;
+	
+	private List<Corpo> partesDocumento;
 	
 	/** Cria um novo documento com o cabecalho e 
 	 *  introducao correspondentes mas caso o 
@@ -27,30 +30,45 @@ public class Documento extends ParteDocumento{
 	
 	public Documento( Long codigoUnico,  Cabecalho cabecalho, Introducao introducao, List<UltimaAlteracao> historicoAlteracao, UltimaAlteracao ultimaAlteracao){
 		super( codigoUnico, historicoAlteracao, ultimaAlteracao);
-		this.partesDocumento = new ArrayList<ParteDocumento>();
-		this.partesDocumento.add(cabecalho);
-		this.partesDocumento.add(introducao);
+		this.partesDocumento = new ArrayList<Corpo>();
+		this.cabecalho = cabecalho;
+		this.introducao = introducao;
 	}
 	
-	public Documento( Long codigoUnico, List<UltimaAlteracao> historicoAlteracao, List<ParteDocumento> partesDocumento ){
-		super( codigoUnico, historicoAlteracao, null);
+	public Long getCodigoUnico() {
+		return codigoUnico;
+	}
+
+	public void setCodigoUnico(Long codigoUnico) {
+		this.codigoUnico = codigoUnico;
+	}
+
+	public Cabecalho getCabecalho() {
+		return cabecalho;
+	}
+
+	public void setCabecalho(Cabecalho cabecalho) {
+		this.cabecalho = cabecalho;
+	}
+
+	public Introducao getIntroducao() {
+		return introducao;
+	}
+
+	public void setIntroducao(Introducao introducao) {
+		this.introducao = introducao;
+	}
+
+	public List<Corpo> getPartesDocumento() {
+		return partesDocumento;
+	}
+
+	public void setPartesDocumento(List<Corpo> partesDocumento) {
 		this.partesDocumento = partesDocumento;
 	}
 	
-	public void  adicionaParteDocumento( ParteDocumento parteDocumento){
-		this.partesDocumento.add(parteDocumento);
-	}
-	
-	public void removeParteDocumento( ParteDocumento parteDocumento ){
-		this.partesDocumento.remove(partesDocumento);
-	}
-	
-	/**
-	 * Retorna a lista que so pode ser 
-	 * lida do documento.
-	 * */
-	public List<ParteDocumento> documento(){
-		return Collections.unmodifiableList(this.partesDocumento);
+	public List<UltimaAlteracao> getAlteracaoes(){
+		return this.historicoAlteracao;
 	}
 
 	@Override
@@ -59,5 +77,4 @@ public class Documento extends ParteDocumento{
 		this.partesDocumento.forEach( a -> textMarkdow.append(a.getMarkdown()));
 		return textMarkdow.toString();
 	}
-	
 }

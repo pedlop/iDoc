@@ -32,7 +32,16 @@ public class Introducao extends ParteDocumento{
 		return textoMarkdown;
 	}
 	
-	public void escreverIntroducao( String textoIntroducao ){
+	public Campo  getIntroducao(){
+		return this.introducao;
+	}
+	
+	public List<UltimaAlteracao> getAlteracoes(){
+		return this.historicoAlteracao;
+	}
+	
+	public void escreverIntroducao( String textoIntroducao, UltimaAlteracao ultimaAlteracao){
 		this.introducao.setConteudo(textoIntroducao);
+		this.historicoAlteracao.add(ultimaAlteracao);
 	}
 }
