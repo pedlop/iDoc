@@ -15,6 +15,7 @@ import {ProjetosComponent}               from './page/ProjetosComponent/Projetos
 import {CampoComponent}                  from './page/CampoComponent/CampoComponent';
 import {HomeComponent}                   from './page/HomeComponent/HomeComponent';
 import {CadastroComponent}               from './page/CadastroComponent/CadastroComponent';
+import {CabecalhoComponent}               from './page/CabecalhoComponent/CabecalhoComponent';
 /**-------------------- DOMINIO E COMUNICAO WebService ----------------------*/
 
 /** ------------------------ SINGLETONS --------------------------------------*/
@@ -35,7 +36,8 @@ const appRoutes: Routes = [
   { path: 'campo', component: CampoComponent},
   { path: 'home', component: HomeComponent},
   { path: 'projetos', component: ProjetosComponent},
-  { path: 'cadastro', component: CadastroComponent}
+  { path: 'cadastro', component: CadastroComponent},
+  { path: 'cabecalho', component: CabecalhoComponent}
 ];
 
 @NgModule({
@@ -49,7 +51,8 @@ const appRoutes: Routes = [
                   CampoComponent,
                   ProjetosComponent,
                   HomeComponent,
-                  CadastroComponent
+                  CadastroComponent,
+                  CabecalhoComponent
                   ],
   providers:    [ WINDOW_PROVIDER],
   bootstrap:    [ AppComponent ]

@@ -10,18 +10,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var AppComponent = (function () {
-    function AppComponent(router) {
+/********************************************** */
+var ProjetosComponent = (function () {
+    function ProjetosComponent(router) {
         this.router = router;
     }
-    return AppComponent;
+    return ProjetosComponent;
 }());
-AppComponent = __decorate([
+ProjetosComponent = __decorate([
     core_1.Component({
-        selector: 'my-app',
-        templateUrl: 'app/page/AppComponent/AppComponent.html'
+        selector: 'projetos',
+        templateUrl: 'app/page/ProjetosComponent/ProjetosComponent.html',
+        providers: []
     }),
     __metadata("design:paramtypes", [router_1.Router])
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=AppComponent.js.map
+], ProjetosComponent);
+exports.ProjetosComponent = ProjetosComponent;
+//# sourceMappingURL=ProjetosComponent.js.map
