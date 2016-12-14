@@ -28,12 +28,12 @@ const WINDOW_PROVIDER: ValueProvider = {
 };
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/campo',pathMatch: 'full'},
+  { path: '', redirectTo: '/home',pathMatch: 'full'},
   { path: 'login', component: LoginComponent },
-  { path: 'home', component: AppComponent},
+  { path: 'app', component: AppComponent},
   { path: 'projetos', component: ProjetosComponent},
   { path: 'campo', component: CampoComponent},
-  { path: 'app', component: AppComponent},
+  { path: 'home', component: HomeComponent},
   { path: 'projetos', component: ProjetosComponent},
   { path: 'cadastro', component: CadastroComponent}
 ];
