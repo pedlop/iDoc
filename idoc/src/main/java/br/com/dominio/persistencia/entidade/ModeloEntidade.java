@@ -76,4 +76,12 @@ public class ModeloEntidade implements Serializable{
 		if( ultimaAlteracao != null )
 			this.ultimaAlteracao.add( new UltimaAlteracaoEntidade(ultimaAlteracao));
 	}
+	
+	public List<UltimaAlteracaoEntidade> getUltimasAlteracoes(){
+		return this.ultimaAlteracao;
+	}
+	
+	public Long getCodigoUnico(){
+		return this.codigoUnico;
+	}
 }

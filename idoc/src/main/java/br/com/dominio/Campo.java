@@ -28,6 +28,7 @@ public class Campo {
 	}
 
 	public Campo(String nomeCampo, String textoAjudaCampo, TipoCampo tipoCampo) {
+		this.codigoUnico = 0l;
 		this.nomeCampo = nomeCampo;
 		this.textoAjudaCampo = textoAjudaCampo;
 		this.tipoCampo = tipoCampo;

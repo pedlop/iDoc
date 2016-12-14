@@ -15,8 +15,6 @@ import java.util.List;
 
 public class Documento extends ParteDocumento{
 	
-	public Long codigoUnico;
-	
 	private Cabecalho cabecalho;
 	
 	private Introducao introducao;

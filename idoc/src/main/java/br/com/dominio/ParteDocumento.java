@@ -26,11 +26,12 @@ public abstract class ParteDocumento implements IExportMarkdown{
 			this.codigoUnico = codigoUnico;
 		else
 			this.codigoUnico = 0l;
-		if( historicoAlteracao == null ){
+		if( historicoAlteracao == null )
 			historicoAlteracao = new ArrayList<UltimaAlteracao>();
-			this.historicoAlteracao = historicoAlteracao;
-		}
+		this.historicoAlteracao = historicoAlteracao;
+		
 		if( ultimaAlteracao != null )
 			this.historicoAlteracao.add(ultimaAlteracao);
 	}
+	
 }

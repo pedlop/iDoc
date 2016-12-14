@@ -9,10 +9,7 @@ public class CabecalhoTeste {
 	private Cabecalho cabecalho;
 
 	@Test
-	public void testaCricaoCabecalho() {
-		this.cabecalho = new Cabecalho(null, new ListaUltimasAlteracoes().getListaAlteracoes());
-		assertEquals(false, this.cabecalho.equals(null));
-		
+	public void testaCricaoCabecalho() {		
 		this.cabecalho = new Cabecalho(null, new ListaUltimasAlteracoes().getListaAlteracoes(),
 				new UltimaAlteracaoTeste().getUltimaAlteracao(), new UsuarioTeste().getUsuario());
 		assertEquals(false, this.cabecalho.equals(null));
@@ -36,6 +33,11 @@ public class CabecalhoTeste {
 		this.testaCricaoCabecalho();
 		this.cabecalho.editarCabecalho( new UsuarioTeste().getUsuario());
 		assertEquals( false, this.cabecalho.equals(null));
+	}
+	
+	public Cabecalho getCabecalho(){
+		this.testaCricaoCabecalho();
+		return this.cabecalho;
 	}
 
 }
