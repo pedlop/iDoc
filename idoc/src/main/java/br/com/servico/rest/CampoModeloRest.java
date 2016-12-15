@@ -23,7 +23,7 @@ public class CampoModeloRest {
 		this.campoModeloServico = campoModeloServico;
 	}
 	
-	@RequestMapping( name = "/cadastrar/modelo/campo", method = RequestMethod.POST )
+	@RequestMapping( value = "/cadastrar/modelo/campo", method = RequestMethod.POST )
 	public MessagemUsuario cadastrarModeloCampo( @RequestBody String nomeCampo, 
 			@RequestBody String textoAjuda, @RequestBody TipoCampo tipoCampo){
 		try {
@@ -34,12 +34,12 @@ public class CampoModeloRest {
 		}
 	}
 	
-	@RequestMapping( name = "/buscaTodos/modelo/campo", method = RequestMethod.GET )
+	@RequestMapping( value = "/buscaTodos/modelo/campo", method = RequestMethod.GET )
 	public List<Campo> buscaModelosCampo(){
 		return this.campoModeloServico.buscaTodosModelos();
 	}
 	
-	@RequestMapping( name = "/deletar/modelo/campo", method = RequestMethod.GET )
+	@RequestMapping( value = "/deletar/modelo/campo", method = RequestMethod.GET )
 	public MessagemUsuario deletarModeloCampo(@RequestBody Campo campo ){
 		this.campoModeloServico.deletarCampo(campo);
 		return new MessagemUsuario("Campo deletado com sucesso !!");

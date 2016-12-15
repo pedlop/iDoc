@@ -24,19 +24,19 @@ public class DocumentoModeloRest {
 		this.documentoModeloServico = documentoModeloServico;
 	}
 	
-	@RequestMapping( name = "/cadastrar/modelo/documento", method = RequestMethod.POST )
+	@RequestMapping( value = "/cadastrar/modelo/documento", method = RequestMethod.POST )
 	public MessagemUsuario cadastarModeloDocumento( @RequestBody Cabecalho cabecalho,
 			@RequestBody Introducao introducao, @RequestBody UltimaAlteracao ultimaAlteracao){
 		this.documentoModeloServico.cadastrarModeloDocumento(cabecalho, introducao, ultimaAlteracao);
 	    return new MessagemUsuario(" Modelo de documentacao cadastrado com sucesso !");
 	}
 	
-	@RequestMapping( name = "/buscarTodos/modelo/documento", method = RequestMethod.GET )
+	@RequestMapping( value = "/buscarTodos/modelo/documento", method = RequestMethod.GET )
 	public List<Documento> buscarTodosModelos(){
 		return this.documentoModeloServico.buscarTodosDocumento();
 	}
 	
-	@RequestMapping( name = "/deletar/modelo/documento", method = RequestMethod.POST )
+	@RequestMapping( value = "/deletar/modelo/documento", method = RequestMethod.POST )
 	public MessagemUsuario deletarModelo( @RequestBody Documento modelo ){
 		this.documentoModeloServico.deletarModeloDocumento(modelo);
 		return new MessagemUsuario("Modelo de documentacao deletado com sucesso!");

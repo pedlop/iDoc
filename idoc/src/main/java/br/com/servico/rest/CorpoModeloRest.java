@@ -24,19 +24,19 @@ public class CorpoModeloRest {
 		this.corpoModeloServico = corpoModeloServico;
 	}
 	
-	@RequestMapping( name = "/cadastrar/modelo/corpo", method = RequestMethod.POST )
+	@RequestMapping( value = "/cadastrar/modelo/corpo", method = RequestMethod.POST )
 	public MessagemUsuario cadastrarModeloCorpo( @RequestBody UltimaAlteracao ultimaAlteracao, 
 			@RequestBody List<Campo> camposCorpo){
 		this.corpoModeloServico.cadastrarModeloCorpo(ultimaAlteracao, camposCorpo);
 		return new MessagemUsuario("Modelo de corpo de documento cadastrado com sucesso !");
 	}
 	
-	@RequestMapping( name = "/buscarTodos/modelo/corpo", method = RequestMethod.GET )
+	@RequestMapping( value = "/buscarTodos/modelo/corpo", method = RequestMethod.GET )
 	public List<Corpo> buscarTodosCorpos(){
 		return this.corpoModeloServico.buscarTodosCorpos();
 	}
 	
-	@RequestMapping( name = "/deletar/modelo/corpo", method = RequestMethod.POST )
+	@RequestMapping( value = "/deletar/modelo/corpo", method = RequestMethod.POST )
 	public MessagemUsuario deletarCorpo( @RequestBody Corpo corpo ){
 		this.corpoModeloServico.deletarModeloCorpo(corpo);
 		return new MessagemUsuario(" Modelo de corpo de documento alterado com sucesso!");

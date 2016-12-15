@@ -20,7 +20,7 @@ public class UsuarioSericoRest {
 		this.usuarioServico = usuarioServico;
 	}
 	
-	@RequestMapping( name = "/cadastrar/usuario", method = RequestMethod.POST )
+	@RequestMapping( value = "/cadastrar/usuario", method = RequestMethod.POST )
 	public MessagemUsuario cadastarUsuario( @RequestBody Usuario usuario ){
 		try {
 			this.usuarioServico.cadastrarUsuario(usuario);
