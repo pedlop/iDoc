@@ -9,10 +9,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var http_1 = require("@angular/http");
 /********************************************/
+var Usuario_1 = require("../../dominio/Usuario");
 var CadastroComponent = (function () {
-    function CadastroComponent() {
+    function CadastroComponent(http) {
+        this.http = http;
+        this.usuario = new Usuario_1.Usuario();
+        this.confSenha = "";
     }
+    CadastroComponent.prototype.cadastrar = function () {
+        if (this.usuario.senha != this.confSenha) {
+            alert("Por favor as senhas não confirmam, digite as senhas novamente");
+            this.usuario.senha = "";
+            this.confSenha = "";
+        }
+        this.http
+            .get("http://localhost:10010/cadastrar/usuario/" + JSON.stringify(this.usuario))
+            .subscribe(function (a) {
+            var msg = JSON.parse(a.json());
+            alert(msg.getMessagemUsuario());
+        });
+    };
     return CadastroComponent;
 }());
 CadastroComponent = __decorate([
@@ -21,7 +39,7 @@ CadastroComponent = __decorate([
         templateUrl: 'app/page/CadastroComponent/CadastroComponent.html',
         providers: []
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [http_1.Http])
 ], CadastroComponent);
 exports.CadastroComponent = CadastroComponent;
 //# sourceMappingURL=CadastroComponent.js.map

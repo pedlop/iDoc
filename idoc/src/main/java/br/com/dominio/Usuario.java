@@ -17,6 +17,10 @@ public class Usuario {
 	/**SENHA DO USUARIO*/
 	private String senha;
 	
+	public Usuario(){
+		
+	}
+	
 	public Usuario( String nome, String senha ){
 		this.nome  = nome;
 		this.senha = senha;

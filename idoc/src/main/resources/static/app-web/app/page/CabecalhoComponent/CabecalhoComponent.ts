@@ -1,5 +1,8 @@
-import {Component}      from '@angular/core';
+import {Component}        from '@angular/core';
+import {Http, Response}   from '@angular/http';
 /********************************************/
+import {Cabecalho}        from '../../dominio/Cabecalho';
+import {MessagemUsuario}  from '../../dominio/MessagemUsuario';
 
 
 @Component({
@@ -8,12 +11,11 @@ import {Component}      from '@angular/core';
     providers: []
 })
 export class CabecalhoComponent {
-
-  constructor() {
-    
-  }
-
   
-
+  public cabecalho : Cabecalho;
+  
+  constructor(  private http : Http ) {
+   
+  }
   
 }

@@ -4,6 +4,10 @@ public class MessagemUsuario {
 	
 	private String messagemUsuario;
 	
+	public MessagemUsuario(){
+		
+	}
+	
 	public MessagemUsuario( String msg ){
 		this.messagemUsuario = msg;
 	}
